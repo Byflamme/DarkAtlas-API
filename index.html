@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🔥 𝔇𝔞𝔯𝔨 𝔄𝔱𝔩𝔞𝔰</title>
+
+
+<style>
+
+
+.profile-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.actions{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-left:auto;
+}
+
+
+.confidence{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+
+
+
+
+.copy-btn{
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#250000;
+
+border:1px solid red;
+
+color:#ff3333;
+
+font-size:18px;
+
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+.copy-btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 15px red;
+
+}
+
+
+
+
+
+.card{
+
+    margin-top:35px;
+
+    padding:35px;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(80,0,0,.8),
+        rgba(10,0,0,.95)
+    );
+
+
+    border:1px solid red;
+
+    border-radius:30px;
+
+
+    box-shadow:
+
+    0 0 30px rgba(255,0,0,.25);
+
+}
+
+
+/* NOUVEAU STYLE DES CRITERES AJOUTES */
+
+.field{
+
+    margin-top:20px;
+
+    padding:20px 25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #250000,
+        #080000
+    );
+
+    border:1px solid #660000;
+
+    border-radius:20px;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+/* bouton supprimer */
+
+.delete{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:12px;
+
+    background:#300000;
+
+    color:#ff5555;
+
+    border:1px solid red;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
+
+/* titre du critère */
+
+.field label{
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+
+/* icône à gauche */
+
+.field-icon{
+
+    font-size:24px;
+
+    color:#ff3333;
+
+    margin-right:10px;
+
+}
+
+
+/* champ de texte */
+
+.field input{
+
+    width:90%;
+
+    padding:15px;
+
+    background:#050505;
+
+    color:white;
+
+    border:1px solid red;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+}
+
+
+.field input::placeholder{
+
+    color:#777;
+
+}
+
+
+/* RESULTATS STYLE */
+
+.profile-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+
+.profile-header h2{
+
+display:flex;
+gap:10px;
+align-items:center;
+
+}
+
+
+
+.confidence{
+
+background:#250000;
+
+border:1px solid red;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+color:#ff5555;
+
+}
+
+
+
+.actions{
+
+display:flex;
+
+align-items:center;
+
+gap:6px;
+
+}
+
+
+
+
+
+
+
+.copy-btn:hover{
+
+box-shadow:0 0 15px red;
+
+transform:scale(1.1);
+
+}
+
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+
+
+.info-box{
+
+display:flex;
+
+gap:15px;
+
+align-items:center;
+
+background:#080808;
+
+border:1px solid #550000;
+
+border-radius:15px;
+
+padding:15px;
+
+}
+
+
+
+.info-box i{
+
+font-size:22px;
+
+color:#ff3333;
+
+}
+
+
+
+.sources{
+
+margin-top:25px;
+
+padding-top:20px;
+
+border-top:1px solid #550000;
+
+color:#aaa;
+
+}
+
+
+
+
+
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Arial,sans-serif;
+
+}
+
+
+
+body{
+
+
+min-height:100vh;
+
+
+background:
+
+radial-gradient(
+
+circle at top,
+
+#350000,
+
+#050505 60%
+
+);
+
+
+color:white;
+
+overflow-x:hidden;
+
+
+}
+
+
+
+/* LUMIERE */
+
+#cursor-light{
+
+position:fixed;
+
+width:450px;
+
+height:450px;
+
+border-radius:50%;
+
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,0,0,.35),
+
+transparent 70%
+
+);
+
+
+filter:blur(30px);
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:0;
+
+
+}
+
+
+
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+width:95%;
+
+max-width:1400px;
+
+margin:auto;
+
+padding:35px;
+
+
+}
+
+
+
+/* HEADER */
+
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:40px;
+
+
+}
+
+
+
+.logo{
+
+font-size:45px;
+
+font-weight:bold;
+
+color:#ff2020;
+
+
+text-shadow:
+
+0 0 20px red,
+
+0 0 50px red;
+
+
+}
+
+
+
+.badge{
+
+background:#200000;
+
+border:1px solid red;
+
+padding:10px 20px;
+
+border-radius:30px;
+
+color:#ff5555;
+
+
+}
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+background:
+
+rgba(20,0,0,.75);
+
+
+border:
+
+1px solid rgba(255,0,0,.4);
+
+
+border-radius:30px;
+
+
+padding:40px;
+
+
+box-shadow:
+
+0 0 50px rgba(255,0,0,.2);
+
+
+}
+
+
+
+.hero h1{
+
+font-size:55px;
+
+margin-bottom:15px;
+
+
+}
+
+
+
+.hero p{
+
+color:#aaa;
+
+font-size:18px;
+
+
+}
+
+
+
+/* BOUTON */
+
+
+.main-btn{
+
+
+margin-top:30px;
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#700000,
+
+#ff0000
+
+);
+
+
+color:white;
+
+border:none;
+
+padding:16px 35px;
+
+border-radius:15px;
+
+font-size:18px;
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 0 25px rgba(255,0,0,.5);
+
+
+transition:.3s;
+
+
+}
+
+
+
+.main-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+/* PANEL */
+
+
+#panel{
+
+
+display:none;
+
+
+margin-top:35px;
+
+padding:35px;
+
+
+background:
+
+rgba(15,0,0,.9);
+
+
+border-radius:30px;
+
+
+border:
+
+1px solid rgba(255,0,0,.5);
+
+
+box-shadow:
+
+0 0 40px rgba(255,0,0,.25);
+
+
+}
+
+
+
+#panel h2{
+
+color:#ff3333;
+
+margin-bottom:25px;
+
+
+}
+
+
+
+/* CRITERES */
+
+.criteria-grid{
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(
+
+auto-fit,
+
+minmax(160px,1fr)
+
+);
+
+
+gap:20px;
+
+
+}
+
+
+
+.criterion-card{
+
+
+background:
+
+linear-gradient(
+
+145deg,
+
+#250000,
+
+#080808
+
+);
+
+
+
+border:
+
+1px solid #550000;
+
+
+border-radius:20px;
+
+
+padding:25px;
+
+
+text-align:center;
+
+
+cursor:pointer;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.criterion-card:hover{
+
+
+transform:translateY(-7px);
+
+
+border-color:red;
+
+
+box-shadow:
+
+0 0 30px rgba(255,0,0,.5);
+
+
+}
+
+
+
+.criterion-card span{
+
+
+font-size:40px;
+
+color:#ff3333;
+
+
+}
+
+
+
+.criterion-card h3{
+
+
+margin-top:15px;
+
+color:#ff4444;
+
+
+}
+
+
+
+.criterion-card p{
+
+
+margin-top:8px;
+
+color:#aaa;
+
+
+}
+
+.discord-btn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    font-size:50px;
+
+    color:#5865F2;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    filter:drop-shadow(0 0 15px #5865F2);
+
+    transition:.3s;
+
+}
+
+
+.discord-btn:hover{
+
+    transform:scale(1.2);
+
+}
+
+
+
+
+.copy-btn:hover{
+
+    background:red;
+
+    box-shadow:0 0 15px red;
+
+}
+
+
+
+.copy-message{
+
+    display:none;
+
+    position:absolute;
+
+    top:65px;
+
+    right:20px;
+
+    background:#080808;
+
+    border:1px solid red;
+
+    padding:8px 15px;
+
+    border-radius:10px;
+
+    color:#ff5555;
+
+}
+
+
+.card{
+
+    position:relative;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+<a 
+href="https://discord.gg/dNCsNv6Hd"
+target="_blank"
+class="discord-btn">
+
+<i class="fa-brands fa-discord"></i>
+
+</a>
+
+
+
+<div id="cursor-light"></div>
+
+
+
+<div class="container">
+
+
+
+<header class="header">
+
+
+<div class="logo">
+
+🔥 𝔇𝔞𝔯𝔨 𝔄𝔱𝔩𝔞𝔰
+
+</div>
+
+
+<div class="badge">
+
+OSINT SEARCH
+
+</div>
+
+
+</header>
+
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+
+Recherche avancée
+
+</h1>
+
+
+
+<p>
+
+Explore les archives 𝔇𝔞𝔯𝔨 𝔄𝔱𝔩𝔞𝔰 avec des critères personnalisés.
+
+</p>
+
+
+
+
+<button class="main-btn" onclick="ouvrirRecherche()">
+
+
+🔎 Ouvrir la recherche
+
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+<div id="panel">
+
+
+
+<h2>
+
+Choisir les critères
+
+</h2>
+
+
+
+
+
+<div class="criteria-grid">
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Nom')">
+
+<span>
+<i class="fa-solid fa-user"></i>
+</span>
+
+<h3>
+Nom
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Prénom')">
+
+<span>
+<i class="fa-solid fa-id-card"></i>
+</span>
+
+<h3>
+Prénom
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Genre')">
+
+<span>
+<i class="fa-solid fa-venus-mars"></i>
+</span>
+
+<h3>
+Genre
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Naissance')">
+
+<span>
+<i class="fa-solid fa-calendar-days"></i>
+</span>
+
+<h3>
+Naissance
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Email')">
+
+<span>
+<i class="fa-solid fa-envelope"></i>
+</span>
+
+<h3>
+Email
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Téléphone')">
+
+<span>
+<i class="fa-solid fa-phone"></i>
+</span>
+
+<h3>
+Téléphone
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Adresse')">
+
+<span>
+<i class="fa-solid fa-house"></i>
+</span>
+
+<h3>
+Adresse
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Code postal')">
+
+<span>
+<i class="fa-solid fa-map-pin"></i>
+</span>
+
+<h3>
+Code postal
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Ville')">
+
+<span>
+<i class="fa-solid fa-location-dot"></i>
+</span>
+
+<h3>
+Ville
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Username')">
+
+<span>
+<i class="fa-solid fa-at"></i>
+</span>
+
+<h3>
+Username
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Nom affiché')">
+
+<span>
+<i class="fa-solid fa-address-card"></i>
+</span>
+
+<h3>
+Nom affiché
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Société')">
+
+<span>
+<i class="fa-solid fa-building"></i>
+</span>
+
+<h3>
+Société
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="criterion-card" onclick="ajouterChamp('Fonction')">
+
+<span>
+<i class="fa-solid fa-briefcase"></i>
+</span>
+
+<h3>
+Fonction
+</h3>
+
+<p>
+Ajouter
+</p>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+<div id="champs"></div>
+
+
+
+
+
+<button class="main-btn" onclick="lancerRecherche()">
+
+
+🚀 Lancer la recherche
+
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="resultats"></div>
+
+
+
+
+
+</div>
+
+<script>
+
+
+// =====================
+// LUMIERE SOURIS
+// =====================
+
+const light = document.getElementById("cursor-light");
+
+
+document.addEventListener("mousemove",(e)=>{
+
+    light.style.left = e.clientX + "px";
+    light.style.top = e.clientY + "px";
+
+});
+
+
+
+
+
+// =====================
+// OUVRIR RECHERCHE
+// =====================
+
+
+function ouvrirRecherche(){
+
+
+let panel=document.getElementById("panel");
+
+
+panel.style.display="block";
+
+
+
+setTimeout(()=>{
+
+
+panel.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+
+},100);
+
+
+}
+
+
+
+
+
+
+// =====================
+// AJOUTER CRITERE
+// =====================
+
+
+function ajouterChamp(nom){
+
+
+
+if(document.getElementById("bloc-"+nom)){
+
+return;
+
+}
+
+
+
+
+let div=document.createElement("div");
+
+
+div.className="field";
+
+
+div.id="bloc-"+nom;
+
+
+
+div.innerHTML=`
+
+<button class="delete" onclick="supprimerChamp('${nom}')">
+
+×
+
+
+</button>
+
+
+<label>
+
+<i class="fa-solid fa-user field-icon"></i>
+
+${nom}
+
+</label>
+
+
+<input 
+
+id="${nom}"
+
+placeholder="Entrer ${nom}"
+
+>
+
+`;
+
+
+
+document.getElementById("champs").appendChild(div);
+
+
+
+}
+
+
+
+
+
+
+// =====================
+// SUPPRIMER CRITERE
+// =====================
+
+
+function supprimerChamp(nom){
+
+
+let bloc=document.getElementById("bloc-"+nom);
+
+
+if(bloc){
+
+bloc.remove();
+
+}
+
+
+}
+
+
+
+
+
+
+
+// =====================
+// DATE
+// =====================
+
+
+function formaterDate(date){
+
+
+if(!date){
+
+return "Non renseignée";
+
+}
+
+
+
+if(/^\d{4}-\d{2}-\d{2}$/.test(date)){
+
+return date;
+
+}
+
+
+
+let d=new Date(date);
+
+
+
+if(!isNaN(d)){
+
+
+return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+
+
+}
+
+
+
+return "Non renseignée";
+
+
+}
+
+
+
+
+
+
+
+// =====================
+// RECHERCHE API
+// =====================
+
+
+async function lancerRecherche(){
+
+
+
+let recherche={};
+
+
+
+document.querySelectorAll(".field").forEach(champ=>{
+
+
+let input=champ.querySelector("input");
+
+
+
+if(input.value.trim()){
+
+
+recherche[input.id]=input.value.trim();
+
+
+}
+
+
+
+});
+
+
+
+
+
+
+let resultats=document.getElementById("resultats");
+
+
+
+resultats.innerHTML="⏳ Recherche en cours...";
+
+
+
+
+
+try{
+
+
+
+let response=await fetch("http://localhost:3000/search",{
+
+
+method:"POST",
+
+
+headers:{
+
+
+"Content-Type":"application/json"
+
+
+},
+
+
+body:JSON.stringify({
+
+
+
+prenom:recherche["Prénom"] || "",
+
+nom:recherche["Nom"] || "",
+
+genre:recherche["Genre"] || "",
+
+date_naissance:recherche["Naissance"] || "",
+
+email:recherche["Email"] || "",
+
+telephone:recherche["Téléphone"] || "",
+
+adresse:recherche["Adresse"] || "",
+
+code_postal:recherche["Code postal"] || "",
+
+ville:recherche["Ville"] || "",
+
+nom_utilisateur:recherche["Username"] || "",
+
+nom_affichage:recherche["Nom affiché"] || "",
+
+societe:recherche["Société"] || "",
+
+fonction:recherche["Fonction"] || ""
+
+
+})
+
+
+});
+
+
+
+
+
+
+let data=await response.json();
+
+
+
+console.log(data);
+
+
+
+
+
+if(!data.data || !data.data.results || data.data.results.length===0){
+
+
+resultats.innerHTML="Aucun résultat";
+
+
+return;
+
+
+}
+
+
+
+
+
+
+
+let html=`
+
+
+<div class="results-title">
+
+🔥 Résultats 𝔇𝔞𝔯𝔨 𝔄𝔱𝔩𝔞𝔰
+
+</div>
+
+
+`;
+
+
+
+
+
+
+
+data.data.results.forEach(personne=>{
+
+
+
+
+
+let sources=personne._sources 
+? personne._sources.join(" • ")
+:"Aucune source";
+
+
+
+
+
+
+
+html+=`
+
+
+<div class="card">
+
+
+
+
+<div class="profile-header">
+
+
+<h2>
+
+
+<i class="fa-solid fa-user"></i>
+
+
+${
+
+personne.nom_affichage ||
+
+((personne.nom_famille || "")+" "+(personne.prenom || "")).trim()
+
+|| "Inconnu"
+
+
+}
+
+
+
+</h2>
+
+
+
+
+<div class="actions">
+
+<button 
+class="copy-btn" 
+onclick="copierInfos(this)">
+<i class="fa-solid fa-copy"></i>
+</button>
+
+
+<div class="confidence">
+<i class="fa-solid fa-chart-line"></i>
+${personne._confidence || 0}%
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="info-grid">
+
+
+
+
+
+${personne.date_naissance ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<div>
+
+<b>Naissance</b>
+
+<br>
+
+${formaterDate(personne.date_naissance)}
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+${personne.genre ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-venus-mars"></i>
+
+<div>
+
+<b>Genre</b>
+
+<br>
+
+${personne.genre}
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+
+${personne.email ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<div>
+
+<b>Email</b>
+
+<br>
+
+${personne.email}
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+
+${personne.telephone ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-phone"></i>
+
+<div>
+
+<b>Téléphone</b>
+
+<br>
+
+${personne.telephone}
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+
+${personne.adresse ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-house"></i>
+
+<div>
+
+<b>Adresse</b>
+
+<br>
+
+<a 
+href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personne.adresse)}"
+target="_blank"
+style="color:#ff5555;text-decoration:none;">
+
+${personne.adresse}
+
+</a>
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+
+${personne.ville ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<div>
+
+<b>Ville</b>
+
+<br>
+
+${personne.ville}
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+
+${personne.nom_utilisateur ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-at"></i>
+
+<div>
+
+<b>Username</b>
+
+<br>
+
+${personne.nom_utilisateur}
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+
+${personne.societe ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-building"></i>
+
+<div>
+
+<b>Société</b>
+
+<br>
+
+${personne.societe}
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+
+${personne.fonction ? `
+
+<div class="info-box">
+
+<i class="fa-solid fa-briefcase"></i>
+
+<div>
+
+<b>Fonction</b>
+
+<br>
+
+${personne.fonction}
+
+</div>
+
+</div>
+
+`:''}
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="sources">
+
+
+<i class="fa-solid fa-database"></i>
+
+
+<b>Sources</b>
+
+
+<br>
+
+
+${sources}
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+`;
+
+
+
+
+
+});
+
+
+
+
+
+
+resultats.innerHTML=html;
+
+
+
+
+
+
+setTimeout(()=>{
+
+
+resultats.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+
+},300);
+
+
+
+
+
+
+
+}
+
+catch(error){
+
+
+console.log(error);
+
+
+resultats.innerHTML="❌ Erreur : "+error.message;
+
+
+}
+
+
+
+}
+
+
+function copierInfos(btn){
+
+
+let card = btn.parentElement;
+
+
+let texte = card.innerText;
+
+
+
+navigator.clipboard.writeText(texte);
+
+
+
+let message = card.querySelector(".copy-message");
+
+
+message.style.display="block";
+
+
+setTimeout(()=>{
+
+message.style.display="none";
+
+},2000);
+
+
+
+}
+
+
+function copierInfos(btn){
+
+
+let card = btn.closest(".card");
+
+
+let texte = card.innerText;
+
+
+
+navigator.clipboard.writeText(texte);
+
+
+
+btn.innerHTML='<i class="fa-solid fa-check"></i>';
+
+
+
+setTimeout(()=>{
+
+
+btn.innerHTML='<i class="fa-solid fa-copy"></i>';
+
+
+},1500);
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
