@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 // Mets ta clé API ici
@@ -11,7 +11,9 @@ const API_KEY = "brix_tQJ7tDo1D0VWfuhiO9TUorq2co_qq7X20YcJXZweHR3PdITK";
 
 
 // Autoriser le site
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
 
 
 // Lire le JSON envoyé par index.html
